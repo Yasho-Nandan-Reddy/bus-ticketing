@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      var darkmode =false
+      function myFunction() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+        darkmode=!darkmode;
+        }
+    </script>
+    <style>
+      
+      ::selection {
+        color: rgb(255, 255, 255);
+        background: #7f39fb;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background-color: #f2e7fe;
+      }
+      body.dark-mode {
+        background-color: rgb(22, 3, 68);
+        color: #ffffff;
+      }
+      .form-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 60%;
+      }
+      .container {
+        display: flex;
+        height: 100%;
+      }
+      .head {
+        font-family: "Roboto Mono";
+        font-size: 18px;
+        text-align: center;
+        background-color: #7f39fb;
+        border-radius:4px ;
+        padding: 35px;
+        color: #ffffff;
+        font-size: 1.19rem;
+      }
+      .head ::selection{
+        color: #7f39fb;
+        background: #ffffff;
+      }
+      .logo {
+        width: 60%;
+      }
+      .login-box {
+        font-family: "Roboto Mono";
+        font-size: 18px;
+        width: 109%;
+        border: 1px solid #7f39fb;
+        border-radius:8px ;
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff;
+      }
+      .dark-mode .login-box {
+        background-color: #28084b;
+        border: none;
+      }
+      .login-form {
+        padding: 20px;
+        /* flex: 1; */
+        padding-top: 50px;
+        /* text-align: center; */
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between; */
+        align-items: center;
+        /* height: 100%; */
+      }
+      /* h5 {
+        width: fit-content;
+      } */
+      .input-container {
+        /* width:fit-content;
+        min-width: 200px; */
+        padding: 5px;
+        font-weight: bold;
+      }
+      .input-container input {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 6px;
+        border: 2px solid #ccc9c9;
+        width: 400px;
+      }
+      .input-container input:hover {
+        border: 2px solid #7f39fb;
+        /* padding-top: 0px; */
+      }
+      .label {
+        margin-bottom: 7px;
+        margin-top: 10px;
+      }
+      .button-container {
+        margin: 10px;
+      }
+      .button-container button {
+        padding: 10px 20px;
+        background-color: #7f39fb;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        margin-top: 29px;
+        width: 200px;
+        margin-left: 100px;
+        color: #ffffff;
+        border: 2px solid #7f39fb;
+      }
+      .button-container button:hover {
+        /* padding: 10px 20px; */
+        background-color: #ffffff;
+        color: #7f39fb;
+        border: 2px solid #7f39fb;
+        /* border-radius: 6px; */
+        /* font-size: 16px; */
+        cursor: pointer;
+      }
+      .header {
+        margin: auto;
+        max-width: 200px;
+      }
+      .login-link {
+        padding-left: 7px;
+        text-decoration: none;
+        color: #ffffff;
+      }
+      .login-link:hover {
+        /* padding-left: 7px;
+        text-decoration: none;
+        color: #ffffff; */
+        color: #f2f1f3;
+        text-shadow: 2px 2px 6px rgb(191, 134, 202);
+      }
+      .behind {
+        margin-top: 590px;
+        margin-left: 480px;
+        font-size: 2rem;
+        font-family: "League Spartan", sans-serif;
+        letter-spacing: 0.2em;
+      }
+      .link-container {
+        margin-top: 10%;
+      }
+      .link-container a {
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .link-container a:hover {
+        color: #7f39fb;
+      }
+      .button-icon{
+        background-color: #ffffff;
+        border: 2px solid #7f39fb;
+        padding: 3%;
+        border-radius: 100px;
+        margin-left: 210%;
+      }
+      .g-recaptcha{
+        margin: 7px;
+        margin-top: 15px;
+      }
+      .hide-bg {
+        mix-blend-mode: multiply;
+        filter: contrast(1);
+        height: 270px;
+        margin-top: -44%;
+    margin-left: -162px;
+        size: 2rem;
+        font-size-adjust: 10;
+      }
+      </style>
+  <body>
+    <div class="container">
+      <div class="behind">
+        <div class="icon-sizing">
+          <img src="Screenshot 2023-10-03 215035.png" alt="" class="hide-bg" />
+        </div>
+        <h1>ROADEO</h1>
+      </div>
+      <div class="logo"></div>
+      <div class="login-box">
+        <div class="head">
+          <div class="header">
+            <div>
+              <button onclick="myFunction()" class="button-icon"><ion-icon name="moon"></ion-icon></button>
+            </div>
+            <h1>Login</h1>
+          </div>
+          <h3>Sign in to continue</h3>
+        </div>
+        <form
+        id="form-details"
+        class="login-form"
+        action=""
+        
+        >
+        <div class="form-container">
+          <div class="input-container">
+            <div class="label">Please enter your mail</div>
+            <input
+            type="email"
+            name="email"
+            id="inputemail"
+            placeholder="Eg :@gmail.com"
+            required
+            />
+          </div>
+          <div class="input-container">
+            <div class="label">Please enter your password</div>
+            <input
+            type="password"
+            id="inputpassword"
+            name="password"
+            placeholder="*********"
+            required
+            />
+          </div>
+          <div class="button-container">
+            <button type="submit">Login</button>
+            <div class="link-container">
+              <a href="/project3/forgotpassword-page.html">Forgot password</a>
+            </div>
+          </div>
+        </div>
+        
+    </body>
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+      <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      function checkLogin(event) {
+        event.preventDefault();
+        
+        const enteredEmail = document.getElementById("inputemail").value;
+        const enteredPassword = document.getElementById("inputpassword").value;
+        
+        const url = "http://127.0.0.1:5000/api/validityemail"
+        const options = {
+        method: 'POST',
+        headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({email:enteredEmail,password:enteredPassword}),
+        }
+fetch(url,options)
+        .then((response) =>  {
+
+          // const lines = data.split("\n");
+          // let userData = {};
+          // for (const line of lines) {
+          //   const [key, value] = line.split(":").map((item) => item.trim());
+          //   userData[key] = value;
+          // }
+          
+          console.log(response);
+          if(response.status == 200 ){
+            return response.json();
+            const name = response.data.name;
+            
+          }else {
+            console.log('Invalide email or password')
+            alert("Invalide email or password");
+
+          }
+          return response.json();
+          })
+          .then((data)=> {
+              const name = data.name;
+              localStorage.setItem("username", name );
+              window.location.href = "newpage.html";
+              console.log(data);
+            }).catch((error) => {
+            console.error("Error reading ", error);
+            alert("An error occurred while processing your request.");
+          });
+      }
+
+      const loginForm = document.getElementById("form-details");
+      loginForm.addEventListener("submit", checkLogin);
+
+    });
+  </script>
+</html>

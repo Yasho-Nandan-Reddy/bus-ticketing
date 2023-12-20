@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ROADEO</title>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <style>
+      body {
+        background-color: #f2e7fe;
+        display: flex;
+        justify-content: center;
+        margin-top: 13%;
+      }
+      .container {
+        border: 2px solid #7f39fb;
+        background-color: white;
+        width: 400px;
+        height: 300px;
+        /* margin-top: 50%;
+            margin-left: 50%; */
+            color: #ffffff;
+            
+        border-radius: 8px;
+        background-color: #7f39fb;
+      }
+      .incontainer {
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        display: inline-block;
+        margin-left: 100px;
+        
+      }
+      .container h1 {
+        margin-left: 10px;
+      }
+      #starting {
+        margin-top: 5px;
+        padding: 10px;
+        border-radius: 8px;
+        border: 2px solid #ffffff;
+        color: #7f39fb;
+      }
+      #destination {
+        margin-top: 15px;
+        padding: 10px ;
+        border-radius: 8px;
+        border: 2px solid #ffffff;
+        color: #7f39fb;
+      }
+      .submitbtn{
+        margin-top: 15px;
+        padding: 10px ;
+        border-radius: 8px;
+        border: 2px solid #f2e7fe;
+        color: #7f39fb;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <h1>Start journey</h1>
+      <form class="incontainer" action="">
+        <div class="from">
+          <input type="text" id="starting" placeholder="From" />
+        </div>
+        <div class="to">
+          <input type="text" id="destination" placeholder="To" />
+        </div>
+        <button class="submitbtn">Submit </button>
+      </form>
+    </div>
+  </body>
+</html>

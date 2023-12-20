@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      ::selection {
+        color: rgb(255, 255, 255);
+        background: #7f39fb;
+      }
+      body {
+        background-color: #f2e7fe;
+      }
+       body.dark-mode {
+        background-color: rgb(22, 3, 68);
+        color: #ffffff;
+      }
+      .container {
+        margin-top: 25%;
+        /* border: 2px solid black; */
+        display: flex;
+        flex-direction: column;
+        padding: 3px 200px;
+        height: 400px;
+        justify-content: center;
+        align-items: center;
+      }
+      .behind {
+        display: grid;
+        /* margin-top: 30%; */
+        /* margin-left: 41%; */
+        font-size: 2rem;
+        font-family: "League Spartan", sans-serif;
+        letter-spacing: 0.2em;
+      }
+      .button-container button {
+        padding: 10px 20px;
+        background-color: #7f39fb;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        margin-top: 29px;
+        width: 200px;
+        /* margin-left: 100px; */
+        color: #ffffff;
+        border: 2px solid #7f39fb;
+      }
+      .button-container button:hover {
+        /* padding: 10px 20px; */
+        background-color: #ffffff;
+        color: #7f39fb;
+        border: 2px solid #7f39fb;
+        /* border-radius: 6px; */
+        /* font-size: 16px; */
+        cursor: pointer;
+      }
+      .signup-link {
+        font-family: "Roboto Mono";
+        font-size: 12px;
+      }
+      .signup-link a {
+        text-decoration: none;
+        color: #a767e4;
+      }
+      .signup-link a:hover {
+        color: #7f39fb;
+        text-shadow: 2px 2px 6px #7f39fb;
+      }
+      .button-icon{
+        background-color: #fafafa;
+        border: 2px solid #7f39fb;
+        padding: 1%;
+        border-radius: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+        <button onclick="myFunction()" class="button-icon"><ion-icon name="moon"></ion-icon></button>
+    </div>
+    <div class="container">
+      <div class="behind">
+        <h1>ROADEO</h1>
+      </div>
+      <div class="button-container">
+        <a href="login_page.html"><button type="submit" onclick>Login</button></a>
+      </div>
+      <div class="signup-link">
+        <h3>New user ? <a href="signup_page.html">Signup</a></h3>
+      </div>
+    </div>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </body>
+  <script>
+    var darkmode =false
+      function myFunction() {
+        var button = document.getElementsByClassName("button-icon");
+        if (darkmode){
+          button[0].innerHTML=`<ion-icon name="moon"></ion-icon>`
+        }
+        else {
+          button[0].innerHTML=`<ion-icon name="moon-outline"></ion-icon>`
+        }
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+        darkmode=!darkmode;
+        }
+  </script>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wending-Login</title>
+    <style>
+         body{
+            font-family: 'Baloo Bhai', cursive;
+            margin: 0px;
+            padding: 0px;
+            height: 976px;
+            background: url('bs.png') no-repeat ;
+            background-position: left center;
+            
+        }
+        .box {
+            font-family: 'Baloo Bhai', cursive;
+            background-color: rgb(244, 246, 248);
+            /* border: 2px solid black; */
+            margin: 180px 1032px;
+            padding: 21px 21px;
+            width: 23%;
+            height: 470px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 10px 10px 7px rgb(85, 85, 85);
+        }
+
+        .box h1 {
+            font-family: 'Baloo Bhai', cursive;
+            text-align: center;
+        }
+        .box a h4 {
+            font-family: 'Baloo Bhai', cursive;
+            /* text-align: center; */
+            width: max-content;
+            margin: auto;
+            padding-top: 31px;
+            color: blue;
+            text-decoration: none;
+        }
+        .box a h4:hover {
+            color: rgb(33, 62, 190);
+            font-size: 1.1rem;
+            text-decoration: underline;
+        }
+
+        body div div {
+            display: block;
+            width: 63%;
+            /* margin: 15px auto; */
+        }
+
+        .container input {
+            font-family: 'Baloo Bhai', cursive;
+            text-align: center;
+            display: block;
+            width: 145%;
+            padding: 15px;
+            background-color: rgb(236, 241, 245);
+            border: 2px solid rgb(228 232 235);
+            margin: 3px auto;
+            font-size: 18px;
+            border-radius: 10px;
+
+        }
+
+        .btn {
+            font-family: 'Baloo Bhai', cursive;
+            background-color: #e5e3ed;
+            margin: 0px 9px;
+            padding: 4px 14px;
+            color: rgb(0, 0, 0);
+            border: 2px solid #d5d5e3;
+            border-radius: 10px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: black;
+            color: white;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>Login!</h1>
+        <form onsubmit="myFunction(event)">
+            <h3>Username</h3>
+            <div class="container">
+                <input type="text" id="user" name="" placeholder="Enter your name">
+            </div>
+            <h3>Password</h3>
+            <div class="container">
+                <input type="password" name="" placeholder="Enter your Password">
+            </div>
+            <br>
+            <button class="btn" type="submit" > Submit </button>
+            <a href="/project 3/htmlsignup.html" style="text-decoration:none"><h4>SignUp?</h4></a>
+        </form>
+    </div>
+</body>
+<script>
+    function myFunction(e) {
+        e.preventDefault();
+      localStorage.setItem('user',document.getElementById("user").value);
+      window.location.href="/project%203/welcome.html"
+      return false
+    }
+</script>
+    
+
+</html>

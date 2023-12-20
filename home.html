@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flipping Card</title>
+    <style>
+        .card {
+            width: 400px;
+            height: 500px;
+            /* perspective: 1000px; */
+            /* cursor: pointer; */
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flipped {
+            transform: rotateY(180deg);
+        }
+        .flip {
+            padding: 10px 27px;
+            margin-left: 139px;
+        }
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+
+        .card-front {
+            background-color: #f2f2f2;
+            color: black;
+            border-radius: 15px;
+        }
+
+        .card-back {
+            background-color: #f2f2f2;
+            color: rgb(0, 0, 0);
+            transform: rotateY(180deg);
+            border-radius: 15px;
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* align-items: center; */
+            height: 70%;
+            padding: 20px;
+        }
+        
+        .card-content button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" >
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="card-content">
+
+                    <!-- <h2>Login</h2> -->
+                    <div class="box">
+                        <h1>Login!</h1>
+                        <form action="target.html" name="loginform" method="post">
+                            <h3>Username</h3>
+                            <div class="container">
+                                <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                                <input type="text" name="Username" id="Username" placeholder="Enter your name">
+                            </div>
+                            <h3>Password</h3>
+                            <div class="container">
+                                <span class="icon"><ion-icon name="lock-closed"></ion-icon></ion-icon></span>
+                                <input type="password" name="Password" id="Password" placeholder="Enter your Password">
+                            </div>
+                            <br>
+                            <button class="btn" onclick="login(loginform)"> Submit </button>
+                            <!-- <a href="/project 3/htmlsignup.html" style="text-decoration:none"><h4>SignUp?</h4></a> -->
+                        </form>
+                    </div>
+                    
+                    
+                </div>
+                <button class="flip" onclick="flipCard(this)">Sign Up</button>    
+            </div>
+            <div class="card-back">
+                <div class="card-content">
+                    <h2>Sign Up</h2>
+                    <h3>Name</h3>
+            <div class="container">
+                <input type="text" name="" placeholder="Enter your name">
+            </div>
+            <h3>Username</h3>
+            <div class="container">
+                <input type="text" name="" placeholder="Enter your username">
+            </div>
+            <h3>Create Password</h3>
+            <div class="container">
+                <input type="password" name="" placeholder="Enter your Password">
+            </div>
+            <br>
+            <button class="btn"> Submit </button>
+            <a href="/project 3/htmllogin.html " style="text-decoration:none">
+            </a>
+        </div>
+        <button class="flip" onclick="flipCard(this)">Login</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function flipCard(card) {
+            card.classList.toggle('flipped');
+        }
+    </script>
+</body>
+</html>

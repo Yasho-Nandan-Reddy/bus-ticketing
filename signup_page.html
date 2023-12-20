@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      ::selection {
+        color: rgb(255, 255, 255);
+        background: #7f39fb;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background-color: #f2e7fe;
+      }
+      .form-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 60%;
+      }
+      .container {
+        display: flex;
+        height: 100%;
+      }
+      .head {
+        font-family: "Roboto Mono";
+        font-size: 18px;
+        text-align: center;
+        background-color: #7f39fb;
+        padding: 35px;
+        color: #ffffff;
+        font-size: 1.19rem;
+      }
+      .head ::selection {
+        color: #7f39fb;
+        background: #ffffff;
+      }
+      .logo {
+        width: 27%;
+      }
+      .login-box {
+        font-family: "Roboto Mono";
+        font-size: 18px;
+        width: 109%;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff;
+      }
+      .login-form {
+        padding: 20px;
+        flex: 1;
+        padding-top: 50px;
+        /* text-align: center; */
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between; */
+        align-items: center;
+        /* height: 100%; */
+      }
+      /* h5 {
+        width: fit-content;
+      } */
+      .input-container {
+        /* width:fit-content;
+        min-width: 200px; */
+        padding: 5px;
+        font-weight: bold;
+      }
+      .input-container input {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 6px;
+        border: 2px solid #ccc9c9;
+        width: 400px;
+      }
+      .input-container input:hover {
+        border: 2px solid #7f39fb;
+        /* padding-top: 0px; */
+      }
+      .label {
+        margin-bottom: 7px;
+        margin-top: 18px;
+      }
+      .button-container {
+        margin: 10px;
+      }
+      .button-container button {
+        padding: 10px 20px;
+        background-color: #7f39fb;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        margin-top: 29px;
+        width: 200px;
+        margin-left: 100px;
+        color: #ffffff;
+      }
+      .button-container button:hover {
+        padding: 10px 20px;
+        background-color: #ffffff;
+        color: #7f39fb;
+        border: 2px solid #7f39fb;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .header {
+        margin: auto;
+        max-width: 200px;
+      }
+      .login-link {
+        padding-left: 7px;
+        text-decoration: none;
+        color: #ffffff;
+      }
+      .login-link:hover {
+        /* padding-left: 7px;
+        text-decoration: none;
+        color: #ffffff; */
+        color: #f2f1f3;
+        text-shadow: 2px 2px 6px rgb(229, 203, 235);
+      }
+      .behind {
+        margin-top: 590px;
+        margin-left: 480px;
+        font-size: 2rem;
+        font-family: "League Spartan", sans-serif;
+        letter-spacing: 0.2em;
+      }
+      .hide-bg {
+        mix-blend-mode: multiply;
+        filter: contrast(1);
+        height: 270px;
+        size: 2rem;
+        margin-top: -200px;
+      }
+      .icon-sizing{
+        display: grid;
+        justify-content: center;
+        margin-right: 49%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="behind">
+        <div class="icon-sizing">
+      <img src="Screenshot 2023-10-03 215035.png" alt="" class="hide-bg" />
+    </div>
+        <h1>ROADEO</h1>
+      </div>
+      <div class="logo"></div>
+      <div class="login-box">
+        <div class="head">
+          <div class="header">
+            <h1 style="font-family: 'Roboto Mono'; font-size: 38px">
+              Create new Account
+            </h1>
+          </div>
+          <h3>
+            Already have Account ?
+            <a class="login-link" href="login_page.html">Login</a>
+          </h3>
+        </div>
+        <form class="login-form">
+          <div class="form-container">
+            <div class="input-container">
+              <div class="label">Please enter your name</div>
+              <input type="text" id="txtname" placeholder="Name" required />
+            </div>
+            <div class="input-container">
+              <div class="label">Please enter your mail</div>
+              <input
+                type="mail"
+                id="txtmail"
+                placeholder="Eg :@gmail.com"
+                required
+              />
+            </div>
+            <div class="input-container">
+              <div class="label">Please enter your password</div>
+              <input
+                type="password"
+                id="txtpassword"
+                placeholder="*********"
+                required
+              />
+            </div>
+            <div class="input-container">
+              <div class="label">Please enter your phone number</div>
+              <input
+                type="number"
+                id="txtphno"
+                placeholder="91+xxxxxxxxxxxx"
+                required
+              />
+            </div>
+            <div class="button-container">
+              <button type="submit">Signup</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.querySelector(".login-form");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent the default form submission
+        // Get form input values
+        const name = document.getElementById("txtname").value;
+        const email = document.getElementById("txtmail").value;
+        const password = document.getElementById("txtpassword").value;
+        const phonenumber = document.getElementById("txtphno").value;
+        // Create an object to hold the form data
+        const formData = {
+          name,
+          email,
+          password,
+          phonenumber,
+        };
+        // Send a POST request to the API endpoint
+        const url = "http://127.0.0.1:5000/api/storedetails"
+        const options = { 
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+        fetch(url,options)
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.error) {
+              console.error("Error:", data.error);
+              // Handle error here (e.g., display an error message to the user)
+            } else {
+              console.log("Success:", data.results);
+              alert('success please proceed to login page');
+              // Handle success here (e.g., show a success message to the user)
+            }
+          })
+          .catch((error) => {
+            console.error("Fetch error:", error);
+            // Handle fetch error here (e.g., display an error message to the user)
+          });
+      });
+    });
+  </script>
+</html>

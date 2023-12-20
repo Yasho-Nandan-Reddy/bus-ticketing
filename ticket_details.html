@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <style>
+      .navbar {
+        /* border: 2px solid black; */
+        padding: 18px;
+        margin-top: -25px;
+        background-color: #ffffff;
+        border-radius: 0px 0px 6px 6px;
+        box-shadow: 10px 10px 5px -2px rgba(0, 0, 0, 0.31);
+        box-shadow: 7px 10px 10px -10px rgba(127, 57, 251, 0.5);
+      }
+      .profile {
+        border: 2px solid rgb(230, 228, 228);
+        display: inline-block;
+        padding: 10px;
+        border-radius: 200px;
+        box-shadow: 7px 10px 10px -10px rgba(127, 57, 251, 0.5);
+        margin-left: 90%;
+        background-color: #ffffff;
+      }
+      .action .menu {
+        position: absolute;
+        top: 120px;
+        right: -10px;
+        padding: 10px 20px;
+        background: #979494;
+        width: 200px;
+        box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        transition: 0.5s;
+        visibility: hidden;
+        opacity: 0;
+      }
+      .action .menu.active {
+        top: 80px;
+        visibility: visible;
+        opacity: 1;
+      }
+      .action .menu::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        right: 28px;
+        width: 20px;
+        height: 20px;
+        background: #fff;
+        transform: rotate(45deg);
+      }
+      .action .menu h3 {
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+        padding: 20px 0;
+        font-weight: 500;
+        color: #555;
+        line-height: 1.5em;
+      }
+      .action .menu h3 span {
+        font-size: 14px;
+        color: #cecece;
+        font-weight: 300;
+      }
+      .action .menu ul li {
+        list-style: none;
+        padding: 16px 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        display: flex;
+        align-items: center;
+      }
+      .action .menu ul li a {
+        display: inline-block;
+        text-decoration: none;
+        color: #555;
+        font-weight: 500;
+        transition: 0.5s;
+      }
+      .hide-bg {
+        mix-blend-mode: multiply;
+        filter: contrast(1);
+        width: 149px;
+        height: 115px;
+        size: 2rem;
+      }
+      .icon {
+        margin-top: -114px;
+      }
+      .navbar-container {
+        margin-top: 19px;
+        margin-bottom: -35px;
+        text-align: center;
+      }
+      .navbar-container ul {
+        margin: 0;
+        padding: 0;
+        text-align: right;
+        display: inline-block;
+        vertical-align: middle;
+        cursor: pointer;
+      }
+      .navbar-container ul li {
+        display: inline-block;
+        font-size: 20px;
+        padding-left: 35px;
+      }
+      .navbar-container ul li a {
+        color: #7f39fb;
+        text-decoration: none;
+        display: inline-block;
+        transition: color 0.5s;
+      }
+      .navbar-container ul li .underline {
+        height: 3px;
+        background-color: transparent;
+        width: 0%;
+        transition: width 0.2s, background-color 0.5s;
+        margin: 0 auto;
+      }
+      .navbar-container ul li.active-link .underline {
+        width: 100%;
+        background-color: #7f39fb;
+      }
+      .navbar-container ul li:hover .underline {
+        background-color: #7f39fb;
+        border-radius: 10px;
+        width: 8%;
+      }
+      .navbar-container ul li:active a {
+        transition: none;
+        color: #7f39fb;
+      }
+
+      .navbar-container ul li:active .underline {
+        transition: none;
+        background-color: #7f39fb;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div style="margin-top: -33px; margin-bottom: -86px">
+        <img
+          src="iconizer-bus-logo-abstract_7315-17.png"
+          alt=""
+          class="hide-bg"
+        />
+      </div>
+      <div class="navbar-container">
+        <ul>
+          <li class="nav-link active-link">
+            <a href="#">Home </a>
+            <div class="underline"></div>
+          </li>
+          <li class="nav-link">
+            <a href="#">About Us</a>
+            <div class="underline"></div>
+          </li>
+          <li class="nav-link">
+            <a href="/project3/contact_page.html">Contact</a>
+            <div class="underline"></div>
+          </li>
+        </ul>
+      </div>
+      <div class="action">
+        <div class="profile" >
+          <ion-icon name="person-outline" class="dropdownMenu"></ion-icon>
+          <div class="menu">
+            <h3>Someone Famous<br /><span>Website Designer</span></h3>
+            <ul>
+              <li>
+                <a href="#">My profile</a>
+              </li>
+              <li>
+                <a href="#">View Ticket</a>
+              </li>
+              <li>
+                <a href="#">Contact Us</a>
+              </li>
+              <li>
+                <a href="#">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

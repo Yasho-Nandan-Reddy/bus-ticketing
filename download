@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid column</title>
+    <style>
+        .container{
+                display: grid;
+            /* grid-template-columns: 300px 100px 100px; */
+            /* grid-template-columns: 300px auto 100px; */
+            /* grid-template-columns: 1fr 4fr 1fr; */
+            grid-template-columns: repeat(3, auto);
+            grid-gap: 2rem;
+        }
+        .item{
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+            border: 2px solid red;
+            margin: 10px;
+            padding: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class = "container">
+        <div class="item" id="item-1">this is first box</div>
+        <div class="item" id="item-2">this is second box</div>
+        <div class="item" id="item-3">this is third box</div>
+        <div class="item" id="item-4">this is fourth box</div>
+        <div class="item" id="item-5">this is fifth box</div>
+        <div class="item" id="item-6">this is sixth box</div>
+        <div class="item" id="item-7">this is seventh box</div>
+        <div class="item" id="item-8">this is 8th box</div>
+        <div class="item" id="item-9">this is 9th box</div>
+    </div>
+</body>
+</html>

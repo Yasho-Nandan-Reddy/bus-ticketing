@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ROADEO</title>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <style>
+      body {
+        background-color: #f2e7fe;
+        /* display: flex;
+        justify-content: center; */
+        margin-top: 1%;
+        height: 2000px;
+      }
+      .container {
+        border: 1px solid #7f39fb;
+        background-color: #7f39fb;
+        color: #ffffff;
+        border-radius: 17px;
+        display: grid;
+        width: 812px;
+        box-shadow: 10px 15px 20px -1px rgba(127, 57, 251, 0.55);
+        grid-template-columns: auto auto;
+      }
+      .incontainer {
+        display: grid;
+      }
+      .container h1 {
+        margin-left: 10px;
+      }
+      #starting {
+        grid-area: 1 / 2 / 2 / 3;
+        color: #7f39fb;
+        padding: 41px 0px;
+        padding-left: 55px;
+        border-radius: 6px 0px 0px 6px;
+        width: 119px;
+        border: 1px solid #7f39fb;
+      }
+      #destination {
+        grid-area: 1 / 3 / 2 / 4;
+        color: #7f39fb;
+        padding: 41px 0px;
+        padding-left: 50px;
+        width: 114px;
+        border: 1px solid #7f39fb;
+      }
+      .submitbtn {
+        grid-area: 1 / 5 / 2 / 6;
+        color: #ffffff;
+        cursor: pointer;
+        font-size: 1.5rem;
+        width: 100px;
+        border-radius: 0px 15px 15px 0px;
+        background-color: #7f39fb;
+        border: 1px solid #7f39fb;
+      }
+      .submitbtn :hover {
+        color: #7f39fb;
+        background-color: #ffffff;
+        border: 1px solid #7f39fb;
+      }
+      .bus-item {
+        border: 2px solid #7f39fb;
+        border-radius: 8px;
+        padding: 27px;
+        padding-left: 153px;
+        margin-top: 30px;
+        margin-left: 10%;
+        margin-right: 10%;
+        background-color: #ffffff;
+        cursor: pointer;
+      }
+      .bus-item:hover {
+        color: #ffffff;
+        background-color: #7f39fb;
+        box-shadow: 10px 15px 20px -1px rgba(127, 57, 251, 0.55);
+        margin-left: 9.7%;
+        margin-right: 9.7%;
+      }
+      #dateselect {
+        grid-area: 1 / 4 / 2 / 5;
+        padding: 40px 0px;
+        border: none;
+        padding-left: 45px;
+        padding-right: 15px;
+        width: 104px;
+        border: 1px solid #7f39fb;
+      }
+      .heading-container {
+        grid-area: 1 / 1 / 2 / 2;
+        border: 2px solid #7f39fb;
+        border-radius: 15px 0px 0px 15px;
+        color: #ffffff;
+        width: 200px;
+        background-color: #7f39fb;
+      }
+      .outcontainer {
+        display: flex;
+        justify-content: center;
+        margin-top: 165px;
+        margin-bottom: 50px;
+      }
+
+      /* navbar */
+
+      .navbar {
+        margin: 1% 4px;
+        background-color: #7f39fb;
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 20px;
+        align-items: center;
+        border-radius: 6px;
+      }
+
+      .logo-container img {
+        height: 92px;
+        width: 133px;
+      }
+
+      .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 30px;
+        padding: 0 0px;
+        /* font-weight: bold; */
+        font-size: 21px;
+        position: relative;
+        overflow: hidden;
+      }
+      .nav-links a:hover {
+        color: #e9e9e9;
+      }
+      .nav-links a:before {
+        content: "";
+        position: absolute;
+        width: 40%;
+        height: 2px;
+        bottom: -3px;
+        left: 30%;
+        background-color: #fff;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out 0s;
+      }
+
+      .nav-links a:hover:before {
+        visibility: visible;
+        transform: scaleX(1);
+      }
+      .nav-links a.active:before {
+        width: 100%;
+        height: 2px;
+        bottom: -3px;
+        left: 0;
+        background-color: #fff;
+        visibility: visible;
+        transform: scaleX(1);
+      }
+
+      .profile-dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .profile-btn {
+        background-color: #7f39fb;
+        color: #fff;
+        font-size: 23px;
+        border: none;
+        /* border-radius: 100%; */
+        padding: 10px;
+        cursor: pointer;
+        margin-right: 100px;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        color: #333;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #ddd;
+      }
+
+      .profile-dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      /* footer */
+      /* Existing styles */
+
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+      }
+
+      .site-footer {
+        margin-top: auto;
+        background-color: #201633; /* Change as needed */
+        color: #fff; /* Change as needed */
+        padding: 47px 0 0 0;
+        /* padding-bottom: 100px; */
+        text-align: center;
+      }
+
+      .site-footer .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .site-footer p {
+        margin-top: 20px;
+      }
+      .site-footer hr {
+        margin-top: 80px;
+        width: 80%;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .footer-social-icons ion-icon {
+        font-size: 24px;
+        margin: 0 5px;
+        color: #fff; /* Change as needed */
+      }
+      .footer-row {
+        display: flex;
+        justify-content: space-evenly; /* Adjust as needed */
+        flex-wrap: wrap; /* Ensures responsiveness */
+      }
+
+      .contentbox {
+        flex-basis: 23%; /* Adjust as needed */
+        /* Other styles for each box */
+      }
+
+      /* Example styles for each content box */
+      .contentbox {
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .site-footer .footer-heading {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+      }
+
+      .site-footer .footer-links {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .site-footer .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .site-footer .footer-links a {
+        color: #ffffff;
+        text-decoration: none;
+        transition: color 0.2s ease-in-out;
+      }
+
+      .site-footer .footer-links a:hover {
+        color: #cccccc;
+      }
+
+      /* Social media icons styles */
+      .site-footer .footer-social {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+      }
+
+      .site-footer .footer-social li {
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      .site-footer .footer-social a {
+        color: #ffffff;
+        font-size: 20px;
+        transition: color 0.2s ease-in-out;
+      }
+
+      .site-footer .footer-social a:hover {
+        color: #cccccc;
+      }
+      .boxbackground {
+        position: absolute;
+        top: 30px;
+        left: 4px;
+        width: 99.7%;
+        height: 340px;
+        background: #ffff;
+        border-radius: 6px;
+        z-index: -1; /* Keep this negative z-index */
+      }
+      .outercontainer button{
+        border: none;
+        background-color: #f2e7fe;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="boxbackground">
+      
+    </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo-container">
+        <img src="iconizer-bus-logo-abstract_7315-17-_1_.png" alt="Logo" />
+      </div>
+      <div class="nav-links">
+        <a href="/project3/newpage.html" class="nav-link">Home</a>
+        <a href="#" class="nav-link">Services</a>
+        <a href="/project3/contact_page.html" class="nav-link">Contact</a>
+        <a href="#" class="nav-link" onclick="scrollWin()">About Us</a>
+      </div>
+      <div class="profile-dropdown">
+        <button class="profile-btn">
+          <ion-icon name="person-outline"></ion-icon>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Settings</a>
+          <a href="/project3/login_page.html">Logout</a>
+        </div>
+      </div>
+    </nav>
+    <!-- Main Content Area -->
+    <div class="outcontainer">
+      <div class="container">
+        <div class="heading-container">
+          <h1>Start journey</h1>
+        </div>
+        <form class="incontainer" id="bussearch" action="">
+          <div class="from">
+            <input
+              type="text"
+              id="starting"
+              style="color: #7f39fb"
+              placeholder="starting"
+              required
+            />
+          </div>
+          <div class="to">
+            <input type="text" id="destination" placeholder="destination" required/>
+          </div>
+          <div class="selectdate">
+            <input type="date" id="dateselect" name="mydate" required/>
+          </div>
+          <button class="submitbtn">Search</button>
+        </form>
+      </div>
+    </div>
+    <div id="bus-list" class="outercontainer"><button></button></div>
+    <!-- footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-row">
+          <div class="contentbox1">
+            <h3 class="footer-heading">Company</h3>
+            <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Our Services</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Affiliate Program</a></li>
+            </ul>
+          </div>
+          <div class="contentbox2">
+            <h3 class="footer-heading">Get Help</h3>
+            <ul class="footer-links">
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Booking</a></li>
+              <li><a href="#">Canceling</a></li>
+              <li><a href="#">Process</a></li>
+            </ul>
+          </div>
+          <div class="contentbox3">
+            <h3 class="footer-heading">Languages</h3>
+            <ul class="footer-links">
+              <li><a href="#">Html</a></li>
+              <li><a href="#">Css</a></li>
+              <li><a href="#">Java Script</a></li>
+              <li><a href="#">Node js</a></li>
+            </ul>
+          </div>
+          <div class="contentbox4">
+            <h3 class="footer-heading">Follow Us</h3>
+            <ul class="footer-social">
+              <li>
+                <a href="#"><i class="fa fa-facebook-alt"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-twitter-alt"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-instagram-alt"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-linkedin-alt"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <p>&copy; 2023 ROADEO. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <script>
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("click", function () {
+          document.querySelectorAll(".nav-link").forEach((el) => {
+            el.classList.remove("active");
+          });
+          this.classList.add("active");
+        });
+      });
+      function scrollWin() {
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth",
+        });
+      }
+    </script>
+    <script type="module">
+      const dateInput = document.getElementById("dateselect");
+      const startingInput = document.getElementById("starting");
+      const destinationInput = document.getElementById("destination");
+      const submitButton = document.querySelector(".submitbtn");
+      const busList = document.getElementById("bus-list");
+      const searchform = document.getElementById("bussearch");
+      searchform.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const starting = startingInput.value;
+        const destination = destinationInput.value;
+        const dateselect = dateInput.value;
+        console.log("Selected Date:", dateselect);
+        localStorage.setItem("datekey", dateselect);
+        localStorage.setItem("starting", starting);
+        localStorage.setItem("destination", destination);
+        const url = "http://127.0.0.1:5000/api/searchBuses";
+        const options = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ starting, destination }),
+        };
+        fetch(url, options)
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.buses && data.buses.length > 0) {
+              const busHTML = data.buses
+                .map((bus) => {
+                  return `
+              <div class="bus-item" data-bus-id="${bus.BusNumber}"  data-routename="${bus.RouteName}">
+                <p>${bus.BusNumber} - ${bus.CompanyName}</p>
+                <p>Route: ${bus.RouteName}</p>
+              </div>
+            `;
+                })
+                .join("");
+              busList.innerHTML = busHTML;
+            } else {
+              busList.innerHTML = "<p>No buses available for this route.</p>";
+            }
+          })
+          .catch((error) => {
+            console.error("API request error:", error);
+            busList.innerHTML =
+              "<p>Error loading data. Please enter all the data correctly.</p>";
+          });
+      });
+      busList.addEventListener("click", (event) => {
+        const busItem = event.target.closest(".bus-item");
+        if (busItem) {
+          const busID = busItem.dataset.busId;
+          const Routename = busItem.dataset.routename;
+          localStorage.setItem("Busnumber", busID);
+          localStorage.setItem("Busroute", Routename);
+          window.location.href = `bus_details.html?busID=${busID}`;
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+Name: newuser
+Mail: random@gmail.com
+Password: nopassword
+Phone Number: 123456789

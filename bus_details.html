@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bus Details</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        background-color: #7f39fb;
+        color: #ffffff;
+        padding: 20px;
+        text-align: center;
+      }
+      .total-box {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-evenly;
+        padding: 40px;
+      }
+      .big-rectangular-box-1 {
+        background-color: #ffffff;
+        border: 2px solid #7f39fb;
+        border-radius: 8px;
+        margin: 20px;
+        padding: 60px;
+        box-shadow: 10px 15px 20px -2px rgba(127, 57, 251, 0.75);
+      }
+      .big-rectangular-box-2 {
+        background-color: #ffffff;
+        border: 2px solid #7f39fb;
+        border-radius: 8px;
+        margin: 20px;
+        padding: 60px;
+        box-shadow: 10px 15px 20px -2px rgba(127, 57, 251, 0.75);
+      }
+      .sub-box {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-columns: 100px 100px;
+        grid-template-rows: 100px 100px 100px 100px;
+        justify-content: space-between;
+      }
+      .sub-box .selected {
+        background-color: #7d33fd;
+        color: #ffffff;
+      }
+
+      .small-rectangular-box {
+        background-color: #ffffff;
+        border: 2px solid #7f39fb;
+        border-radius: 4px;
+        padding: 10px;
+        margin: 10px;
+        color: #8f53f8;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+        height: 70px;
+        width: 40px;
+      }
+
+      .small-rectangular-box:hover {
+        background-color: #9e6bf7;
+        color: #ffffff;
+        border: 2px solid #9860f8;
+      }
+      /* .color-details{
+        margin-left: 1200px;
+      } */
+      .green {
+        display: inline-block;
+        height: 12px;
+        width: 12px;
+        background-color: #00ee88;
+        border: 2px solid #00cc00;
+      }
+      .pink {
+        display: inline-block;
+        height: 12px;
+        width: 12px;
+        background-color: #ffaaff;
+        border: 2px solid #ff00ee;
+      }
+      .White {
+        display: inline-block;
+        height: 12px;
+        width: 12px;
+        background-color: #ffffff;
+        border: 2px solid #7f39fb;
+      }
+      .submitbtn {
+        text-align: center;
+        padding-bottom: 30px;
+      }
+
+      .submitbtn button {
+        padding: 10px 20px;
+        background-color: #7f39fb;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bus Details</h1>
+    <div class="color-detailes" style="margin-left: 1200px">
+      <div class="green"></div>
+      Male
+      <div class="pink"></div>
+      Female
+      <div class="White"></div>
+      unbooked
+    </div>
+    <div class="total-box">
+      <div class="big-rectangular-box-1">
+        <h2 id="Busnumber1"></h2>
+        <p id="route1"></p>
+
+        <h3>Lower Seats</h3>
+        <div class="sub-box" onclick="">
+          <div
+            class="small-rectangular-box selectable"
+            onclick="chooseseat('seat1')"
+            id="seat1"
+          >
+            Seat 1
+          </div>
+          <div
+            class="small-rectangular-box selectable"
+            onclick="chooseseat('seat2')"
+            id="seat2"
+          >
+            Seat 2
+          </div>
+          <div
+            class="small-rectangular-box selectable"
+            onclick="chooseseat('seat3')"
+            id="seat3"
+          >
+            Seat 3
+          </div>
+          <div
+            class="small-rectangular-box selectable"
+            onclick="chooseseat('seat4')"
+            id="seat4"
+          >
+            Seat 4
+          </div>
+          <div
+            class="small-rectangular-box selectable"
+            onclick="chooseseat('seat5')"
+            id="seat5"
+          >
+            Seat 5
+          </div>
+          <div
+            class="small-rectangular-box selectable"
+            onclick="chooseseat('seat6')"
+            id="seat6"
+          >
+            Seat 6
+          </div>
+          <div
+            class="small-rectangular-box selectable"
+            onclick="chooseseat('seat7')"
+            id="seat7"
+          >
+            Seat 7
+          </div>
+          <div
+            class="small-rectangular-box selectable"
+            onclick="chooseseat('seat8')"
+            id="seat8"
+          >
+            Seat 8
+          </div>
+        </div>
+        <h3>Facilities</h3>
+        <ul>
+          <li>Wi-Fi</li>
+          <li>AC</li>
+          <!-- Add more facilities as needed -->
+        </ul>
+      </div>
+      <div class="big-rectangular-box-2">
+        <h2 id="Busnumber2"></h2>
+        <p id="route2"></p>
+
+        <h3>Upper Seats</h3>
+        <div class="sub-box">
+          <div
+            class="small-rectangular-box selectable"
+            onclick="chooseseat('seat9')"
+            id="seat9"
+          >
+            Seat 9
+          </div>
+          <div
+            class="small-rectangular-box selectable"
+            onclick="chooseseat('seat10')"
+            id="seat10"
+          >
+            Seat 10
+          </div>
+          <div
+            class="small-rectangular-box selectable"
+            onclick="chooseseat('seat11')"
+            id="seat11"
+          >
+            Seat 11
+          </div>
+          <div
+            class="small-rectangular-box selectable"
+            onclick="chooseseat('seat12')"
+            id="seat12"
+          >
+            Seat 12
+          </div>
+          <div
+            class="small-rectangular-box selectable"
+            onclick="chooseseat('seat13')"
+            id="seat13"
+          >
+            Seat 13
+          </div>
+          <div
+            class="small-rectangular-box selectable"
+            onclick="chooseseat('seat14')"
+            id="seat14"
+          >
+            Seat 14
+          </div>
+          <div
+            class="small-rectangular-box selectable"
+            onclick="chooseseat('seat15')"
+            id="seat15"
+          >
+            Seat 15
+          </div>
+          <div
+            class="small-rectangular-box selectable"
+            onclick="chooseseat('seat16')"
+            id="seat16"
+          >
+            Seat 16
+          </div>
+        </div>
+        <h3>Facilities</h3>
+        <ul>
+          <li>Wi-Fi</li>
+          <li>AC</li>
+          <!-- Add more facilities as needed -->
+        </ul>
+      </div>
+    </div>
+    <div class="submitbtn">
+      <button type="submit" onclick="subbutton()">Proceed</button>
+    </div>
+  </body>
+  <script>
+    const starting = localStorage.getItem("starting");
+    const destination = localStorage.getItem("destination");
+    const Busnumber = localStorage.getItem("Busnumber");
+    const route1 = document.getElementById("route1");
+    const route2 = document.getElementById("route2");
+    const Busnumber1 = document.getElementById("Busnumber1");
+    const Busnumber2 = document.getElementById("Busnumber2");
+    route1.innerHTML += `Route: ${starting} to ${destination} `;
+    route2.innerHTML += `Route: ${starting} to ${destination} `;
+    Busnumber1.innerHTML += `Bus Number: ${Busnumber} `;
+    Busnumber2.innerHTML += `Bus Number: ${Busnumber} `;
+    let seats = [];
+    function chooseseat(id) {
+      let curdiv = document.getElementById(id);
+
+      // Check if the seat is already booked (colored)
+      if (curdiv.style.backgroundColor !== "") {
+        // Seat is already booked, prevent further action
+        return;
+      }
+
+      curdiv.classList.toggle("selected");
+
+      if (
+        seats.findIndex((v) => {
+          return v == id;
+        }) > -1
+      ) {
+        seats = seats.filter((v, i) => {
+          return v != id;
+        });
+      } else {
+        seats.push(id);
+      }
+      console.log(seats);
+    }
+
+    function subbutton() {
+      localStorage.setItem("selected seats", JSON.stringify(seats));
+      window.location.href = "/project3/details_fill.html";
+    }
+
+    function fetchBookedSeats(date) {
+      console.log("Fetching booked seats for date:", date);
+
+      const url = "http://localhost:5000/api/booked-seats"; // Replace with your backend server URL and endpoint
+      const options = {
+        method: "GET", // Change the method to GET if your API endpoint uses GET requests
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+
+      fetch(`${url}?date=${date}`, options)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok.");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log("Received booked seats data:", data);
+          colorBookedSeats(data);
+        })
+        .catch((error) => {
+          console.error("Error fetching seats:", error);
+          // Handle error - show a message to the user, retry the request, or provide feedback
+          // For instance, displaying an error message to the user
+          alert("Failed to fetch booked seats. Please try again later.");
+        });
+    }
+
+    function colorBookedSeats(bookedSeats) {
+      console.log("Coloring booked seats based on gender:", bookedSeats);
+      bookedSeats.forEach((seat) => {
+        const seatElement = document.getElementById(`seat${seat.SeatNumber}`);
+        if (seat.Gender === "Male") {
+          console.log(`Coloring seat ${seat.SeatNumber} as Male`);
+          seatElement.style.backgroundColor = "#00ee88";
+          seatElement.style.color = "#ffffff";
+        } else if (seat.Gender === "Female") {
+          console.log(`Coloring seat ${seat.SeatNumber} as Female`);
+          seatElement.style.backgroundColor = "#ffaaff";
+          seatElement.style.color = "#ffffff";
+        }
+      });
+    }
+
+    // Get the date from local storage
+    const bookingDate = localStorage.getItem("datekey");
+    console.log("Retrieved booking date from local storage:", bookingDate);
+
+    // Fetch booked seats for the stored date from local storage
+    fetchBookedSeats(bookingDate);
+  </script>
+</html>

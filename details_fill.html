@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <style>
+      body {
+        background-color: #f2e7fe;
+      }
+      .form-box {
+        /* border: 2px solid #7f39fb; */
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: auto auto auto;
+        padding: 50px;
+        padding-top: 0px;
+        padding-bottom: 16px;
+      }
+      .out-box {
+        border-radius: 6px;
+        background-color: white;
+        box-shadow: 10px 15px 20px -2px rgba(127, 57, 251, 0.75);
+      }
+      .out-box h1 {
+        border-radius: 6px 6px 0px 0px;
+        border: 2px solid #7f39fb;
+        background-color: #7f39fb;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        color: white;
+        height: 110px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .input-container {
+        margin-top: 18px;
+      }
+      .label {
+        margin-bottom: 5px;
+      }
+      .popup-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+      }
+      .ticket-box {
+        width: 80%;
+        max-width: 400px;
+        margin: 50px auto;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        padding: 20px;
+      }
+      .close-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+      }
+      ion-icon {
+        font-size: 34px;
+        color: rgb(255, 255, 255);
+      }
+      body {
+        background-color: #f2e7fe;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .form-container {
+        background-color: #fff;
+        border: 2px solid #7f39fb;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        max-width: 400px;
+        width: 100%;
+      }
+      #form-container {
+        padding-top: 40px;
+      }
+
+      .input-container {
+        margin-bottom: 20px;
+      }
+
+      .input-container label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      .input-container input[type="text"],
+      .input-container input[type="number"],
+      .input-container select {
+        width: 70%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      .input-container select {
+        height: 40px;
+      }
+
+      .submit-button {
+        text-align: center;
+        padding-bottom: 30px;
+      }
+
+      .submit-button button {
+        padding: 10px 20px;
+        background-color: #7f39fb;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="out-box">
+      <h1>Fill details</h1>
+      <div class="form-box" id="form-box">
+        <!-- Your forms will be generated here -->
+      </div>
+      <div class="submit-button">
+        <button onclick="clickSubmit()">Submit</button>
+      </div>
+    </div>
+
+    <!-- Pop-up container -->
+    <div class="popup-container" id="popup-container">
+      <div class="ticket-box" id="ticket-box">
+        <!-- Ticket content here -->
+        <h1 style="padding-left: 80px; font-size: 2.5rem">Ticket Details</h1>
+        <img
+          src="SwissPostParcelcode.png"
+          alt=""
+          height="70"
+          width="200"
+          style="padding-left: 100px"
+        />
+        <p>
+          ---------------------------------------------------------------------------
+        </p>
+        <div id="ticket-details"></div>
+        <p style="font-size: 1.5rem">
+          --------------------------------------------------
+        </p>
+        <p style="font-size: 1.2rem"><b>PRICING SUMMARY :</b></p>
+        <p>
+          Journey fee : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+          &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Rs.1000
+        </p>
+        <p>
+          GST :&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+          &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          &nbsp;Rs.50
+        </p>
+        <p>
+          <a style="font-size: 1.1rem">Total :</a> &nbsp; &nbsp; &nbsp; &nbsp;
+          &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+          &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Rs.1050
+        </p>
+
+        <ion-icon
+          class="close-button"
+          onclick="closePopup()"
+          name="close"
+        ></ion-icon>
+      </div>
+    </div>
+
+    <script>
+      // Function to generate ticket details HTML
+      function generateTicketDetails(detailsArray) {
+        let html = "";
+        detailsArray.forEach((details, index) => {
+          html += `
+            <div>
+              <h3 style="font-weight: bold; font-size: 1.5rem;">Passenger ${
+                index + 1
+              }:</h3>
+              <p><b>Name:</b> &nbsp;&nbsp;&nbsp; ${details.name}</p>
+              <p><b>Age:</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${
+                details.age
+              }</p>
+              <p><b>Gender:</b> &nbsp;${details.gender}</p>
+              <p><b>Seat:</b> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;${details.seat}</p>
+            </div>`;
+        });
+        return html;
+      }
+
+      // Check for selected seats in local storage
+      const storedArray = JSON.parse(localStorage.getItem("selected seats"));
+
+      if (Array.isArray(storedArray)) {
+        const arraySize = storedArray.length;
+
+        const formContainer = document.getElementById("form-box");
+
+        for (let i = 0; i < arraySize; i++) {
+          const form = `
+            <div>
+              <form action="" id="form-container">
+                <div class="input-container">
+                  <div class="label">Please enter your name</div>
+                  <input
+                    type="text"
+                    id="txtname${i + 1}"
+                    placeholder="Name"
+                    required
+                  />
+                </div>
+                <div class="input-container">
+                  <div class="label">Please enter your age</div>
+                  <input
+                    type="number"
+                    id="txtage${i + 1}"
+                    placeholder="Age"
+                    required
+                  />
+                </div>
+                <div class="input-container">
+                  <div class="label">Please select your gender</div>
+                  <select
+                    id="txtgender${i + 1}"
+                    name="gender"
+                  >
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Others">Others</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+            `;
+          formContainer.innerHTML += form;
+        }
+      } else {
+        console.error("Array not found in local storage or is not an array.");
+      }
+
+      function clickSubmit() {
+        const storedArray = JSON.parse(localStorage.getItem("selected seats"));
+        const busnumber = localStorage.getItem("Busnumber");
+        const username = localStorage.getItem("username");
+        const arraySize = storedArray.length;
+        const arr = [];
+        for (let i = 0; i < arraySize; i++) {
+          let txtname = document.getElementById("txtname" + [i + 1]).value;
+          let txtage = document.getElementById("txtage" + [i + 1]).value;
+          let txtgender = document.getElementById("txtgender" + [i + 1]).value;
+          const passengerdetails = {
+            name: txtname,
+            age: txtage,
+            gender: txtgender,
+            seat: storedArray[i].substring(4),
+          };
+          arr.push(passengerdetails);
+        }
+        console.log(arr);
+        console.log(arr);
+        const date = localStorage.getItem("datekey");
+        const formData = {
+          arr,
+          date,
+          busnumber,
+          username,
+        };
+        const url = "http://127.0.0.1:5000/api/ticket-details";
+        const options = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        };
+        fetch(url, options)
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.error) {
+              console.error("Error:", data.error);
+            } else {
+              console.log("Success:", data.results);
+            }
+          })
+          .catch((error) => {
+            console.error("Fetch error:", error);
+          });
+
+
+        // Display details in the ticket details popup
+        const ticketDetailsContainer =
+          document.getElementById("ticket-details");
+        ticketDetailsContainer.innerHTML = generateTicketDetails(arr);
+
+        const popupContainer = document.getElementById("popup-container");
+        popupContainer.style.display = "block";
+      }
+
+      function closePopup() {
+        // Hide the pop-up box
+        const popupContainer = document.getElementById("popup-container");
+        popupContainer.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
